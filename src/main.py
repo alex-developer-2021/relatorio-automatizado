@@ -1,19 +1,10 @@
-import csv
+from leitor_csv import ler_vendas
+from relatorio import gerar_resumo
 
-arquivo = "../data/vendas.csv"
+CAMINHO_CSV = "../data/vendas.csv"
 
-total_vendas = 0
-total_itens = 0
-
-with open(arquivo, newline="", encoding="utf-8") as csvfile:
-    leitor = csv.DictReader(csvfile)
-
-    for linha in leitor:
-        quantidade = int(linha["quantidade"])
-        valor = float(linha["valor"])
-
-        total_itens += quantidade
-        total_vendas += quantidade * valor
+vendas = ler_vendas(CAMINHO_CSV)
+total_itens, total_vendas = gerar_resumo(vendas)
 
 print("Resumo Operacional")
 print("-------------------")
