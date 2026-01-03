@@ -10,3 +10,10 @@ print("Resumo Operacional")
 print("-------------------")
 print(f"Total de itens vendidos: {total_itens}")
 print(f"Faturamento total: R$ {total_vendas:.2f}")
+
+from utilidades import calcular_media
+
+valores = [10, 20, 30]
+media = calcular_media(valores)
+
+print(media)
