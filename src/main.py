@@ -11,9 +11,20 @@ print("-------------------")
 print(f"Total de itens vendidos: {total_itens}")
 print(f"Faturamento total: R$ {total_vendas:.2f}")
 
+# from utilidades import calcular_media
+
+# valores = [10, 20, 30]
+# media = calcular_media(valores)
+
+# print(media)
+
 from utilidades import calcular_media
 
-valores = [10, 20, 30]
-media = calcular_media(valores)
+entrada = input("Digite números separados por vírgula: ")
 
-print(media)
+if not entrada.strip():
+    print("Nenhum valor informado.")
+else:
+    valores = [float(valor) for valor in entrada.split(",")]
+    media = calcular_media(valores)
+    print(f"Média calculada: {media}")
