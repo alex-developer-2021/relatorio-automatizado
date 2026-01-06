@@ -25,6 +25,10 @@ entrada = input("Digite números separados por vírgula: ")
 if not entrada.strip():
     print("Nenhum valor informado.")
 else:
-    valores = [float(valor) for valor in entrada.split(",")]
+    try:
+        valores = [float(valor) for valor in entrada.split(",")]
+    except ValueError:
+        print("Erro: digite apenas números separados por vírgula.")
+        exit()
     media = calcular_media(valores)
     print(f"Média calculada: {media}")
